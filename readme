@@ -1,0 +1,14 @@
+submission.py is a python (.py) file.
+
+To run this file:
+ As mentioned in the requirements, it will be run through command line.
+ 1. Open cmd or any terminal.
+ 2. Go to 'submission.py' file directory.
+ 3. Run the command 'python3 submission.py inputfile.txt outputfile.txt'
+ 4. It will take input from 'inputfile.txt' and write the output in 'outputfile.txt'
+
+There are two files submission.py and submission-ext.py
+if you want: 2-1=1 to be included as pair then use extended one (submission-ext.py) otherwise use 'submission.py'
+ 
+Requirements:
+ Python 3 should be installed in your activated environment

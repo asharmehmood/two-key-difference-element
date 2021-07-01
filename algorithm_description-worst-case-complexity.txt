@@ -1,0 +1,61 @@
+###################################################### Algorithm description ###################################################
+
+The algorithm is divided into three parts:
+ 1. Sort the given array
+ 2. Make small bunch of subarrays
+ 3. Find if subarray's elements difference exist as a key in array or not.
+
+
+Read input from 'inputfile.txt' file
+First step: First of all, we sorted the array with merge sort. Merge sort has worst case time complexity of nlog(n) and space complexity of n. It works on divide and conquer rule. Other sorting algorithm takes more time to sort an array than merge sort. However, their space complexity is lesser.
+Second step: After sorting the given array, 'find_difference' function firstly make subarray one by one from the given array by increasing the window size and find the difference of every pair of elements in subarray.
+Third step: After calculating difference of pair of elements, it checks if the difference exist in array in the form of another key or not with the help of binary search algorithm.
+Write output to 'outputfile.txt' file
+
+In second step, we increase window size one by one so we can discover every possible key which is equal to difference of every possible pair.
+An example of process is given below:
+
+
+Input:
+7
+2
+1
+3
+
+
+
+After reading input:
+arr=[7,2,1,3]
+
+After first step (merge sort)
+arr=[1,2,3,7]
+
+Second step and third step process flow (one by one):
+subarray=[1,2]
+diff=2-1=1 (exist)
+
+increase window size
+subarray=[1,2,3]
+diff=3-1=2 (exist)
+diff=3-2=1 (exist)
+
+increase window size
+subarray=[1,2,3,7]
+diff=7-1=6 (does not exist)
+diff=7-2=5 (does not exist)
+diff=7-3=4 (does not exist)
+
+so the output is:
+2 1 1
+3 1 2
+3 2 1
+
+
+############################################################################ worst case time complexity #######################################################################
+In worst case, merge sort time complexity will be O(nlogn), same as average case time complexity
+In worst case, find_difference time complexity will be O(nlogn), same as average case because it will always work in the form of increase window size fashion. which results in running outer loop n times and inner loop ~log n times.
+In worst case, binary search takes log n time complexity.
+
+so it would be calculated as : merge sort + find_difference * binary search
+Total complexity of algorithm: O(nlog(n) + O(nlog(n)) * O(log(n)) => O(n(log(n))^2)
+
